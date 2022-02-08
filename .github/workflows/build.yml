@@ -194,6 +194,10 @@ jobs:
       with:
         name: ${{matrix.pkg_platform}} installer
         path: ${{runner.workspace}}/build/${{env.install_name}}.exe
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ${{matrix.pkg_platform}} library
+        path: ${{runner.workspace}}/build/src/Release/sfizz.dll
 
   # build_for_mingw:
   #   runs-on: ubuntu-18.04
